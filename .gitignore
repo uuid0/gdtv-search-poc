@@ -1,0 +1,6 @@
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+development/whisper.cpp/**
+development/whisper
+/data/

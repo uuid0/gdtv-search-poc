@@ -1,0 +1,25 @@
+name: gdtv-search-services
+
+services:
+  elasticsearch:
+    image: elasticsearch:9.2.4 # https://hub.docker.com/_/elasticsearch/
+    container_name: gdtv-elasticsearch
+    ports:
+      - "127.0.0.1:19200:9200"
+      - "127.0.0.1:19300:9300"
+    environment:
+      - ELASTIC_PASSWORD=dev-password-dont-use-in-production
+      - cluster.name=gdtv
+      - node.name=gdtv-01
+      - discovery.type=single-node
+      - xpack.security.enabled=true
+    deploy:
+      resources:
+        limits:
+          memory: 2000M
+        reservations:
+          memory: 500M
+    volumes:
+      - gdtv-es:/usr/share/elasticsearch/data
+volumes:
+  gdtv-es:

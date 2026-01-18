@@ -1,0 +1,30 @@
+[project]
+name = "gdtv-search"
+requires-python = ">=3.12"
+version = "0.0.1"
+dependencies = []
+
+[tool.pixi.environments]
+default = []
+dev = ["dev"]
+
+[tool.pixi.workspace]
+authors = ["Björn Kortümm (@uuid0) <uuid0@uuid0.com>"]
+channels = ["python", "conda-forge"]
+name = "gdtv-search"
+platforms = ["osx-arm64", "linux-64", "linux-aarch64"]
+version = "0.1.0"
+
+[tool.pixi.pypi-dependencies]
+elasticsearch = "~=9.2" # https://pypi.org/project/elasticsearch/
+
+[tool.pixi.dependencies]
+python = "3.12.*" # https://devguide.python.org/versions/
+pixi-pycharm = ">=0.0.10,<0.0.11"
+pandas = ">=2.3.3,<3" # https://anaconda.org/channels/anaconda/packages/pandas/overview
+requests = ">=2.32.5,<3" # https://anaconda.org/channels/anaconda/packages/requests/overview
+openai = ">=2.15.0,<3" # https://anaconda.org/channels/conda-forge/packages/openai/overview
+pydantic = "2.12.5,<3" # https://anaconda.org/channels/conda-forge/packages/pydantic/overview
+
+[tool.pixi.feature.dev.dependencies]
+jupyter = "*" # https://anaconda.org/anaconda/jupyter
